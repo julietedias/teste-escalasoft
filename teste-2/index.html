@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard de vendas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="menu-lateral">
+        <div class="menu" id="menu" onclick="abreMenu()" title="menu">
+          <i class="material-icons icon-menu" id="icon-menu">menu</i>
+          <img
+            src="images/logo-escalasoft-white.svg"
+            alt="Logo da empresa Escalasoft"
+            id="logo-empresa"
+          />
+        </div>
+        <a href="#" title="Dashboard" class="ativo">
+          <i class="material-icons icon">bar_chart</i>
+          <span>Dashboard</span>
+        </a>
+        <a href="#" title="Vendas">
+          <i class="material-icons icon">paid</i>
+          <span>Vendas</span>
+        </a>
+        <a href="#" title="Relatórios">
+          <i class="material-icons icon">description</i>
+          <span>Relatórios</span>
+        </a>
+        <a href="#" title="Configurações">
+          <i class="material-icons icon">settings</i>
+          <span>Configurações</span>
+        </a>
+      </nav>
+      <main>
+        <h1>Dashboard</h1>
+        <div class="dropdown-periodo-vendas">
+          <label for="periodoVendas">Visualizar vendas por:</label>
+          <select
+            name="periodoVendas"
+            id="periodoVendas"
+            onchange="periodoSelecionado()"
+          >
+            <option value="MENSAL" selected>Mês</option>
+            <option value="TRIMESTRAL">Trimestre</option>
+            <option value="SEMESTRAL">Semestre</option>
+          </select>
+        </div>
+        <div>
+          <canvas id="dashboardVendas" class="dashboard-vendas"></canvas>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="js/dashboard.js" defer></script>
+    <script src="js/menuLateral.js" defer></script>
+  </body>
+</html>

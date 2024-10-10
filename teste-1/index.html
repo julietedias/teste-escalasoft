@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário de cadastro de usuário</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <img
+          src="images/logo-escalasoft-white.svg"
+          alt="Logo da empresa Escalasoft"
+          id="logo-empresa"
+        />
+      </header>
+      <main>
+        <form method="POST">
+          <h1>Cadastro de usuário</h1>
+          <div>
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" required />
+            <p id="erroNomeInvalido" class="mensagem-erro"></p>
+          </div>
+          <div>
+            <label for="email">E-mail</label>
+            <input
+              type="text"
+              id="email"
+              placeholder="exemplo@email.com"
+              required
+            />
+            <p id="erroEmailInvalido" class="mensagem-erro"></p>
+          </div>
+          <div>
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" required />
+            <ul class="regras-senha">
+              <li id="senhaCaracteres">8 caracteres</li>
+              <li id="senhaNumero">1 número</li>
+              <li id="senhaCaractereEspecial">1 caractere especial</li>
+            </ul>
+          </div>
+          <div>
+            <label for="confirmacaoSenha">Confirmação de senha</label>
+            <input type="password" id="confirmacaoSenha" required />
+            <p id="erroConfirmacaoSenha" class="mensagem-erro"></p>
+          </div>
+          <div>
+            <label for="cargo">Cargo</label>
+            <select name="cargo" id="cargo" required>
+              <option value="">Selecione</option>
+              <option value="DIRETOR">Diretor</option>
+              <option value="GERENTE">Gerente</option>
+              <option value="COORDENADOR">Coordenador</option>
+              <option value="OUTRO">Outro</option>
+            </select>
+          </div>
+          <div>
+            <label for="dataNascimento">Data de nascimento</label>
+            <input type="date" id="dataNascimento" required />
+          </div>
+          <div class="termos-servico">
+            <div>
+              <input
+                type="checkbox"
+                id="termosServico"
+                onclick="validaTermosServico()"
+                required
+              />
+              <label for="termosServico"
+                >Aceito os
+                <a
+                  href="https://www.escalasoft.com.br/images/termos-de-uso/termos-de-uso-escalasoft.pdf"
+                  target="_blank"
+                  >Termos de Serviço</a
+                ></label
+              >
+            </div>
+            <p id="erroTermoServico" class="mensagem-erro"></p>
+          </div>
+          <div>
+            <p
+              id="sucessoEnvioFormulario"
+              class="mensagem-sucesso-envio-formulario"
+            >
+              Formulário enviado com sucesso!
+            </p>
+            <p
+              id="erroEnvioFormulario"
+              class="mensagem-erro mensagem-erro-botao"
+            ></p>
+            <button type="submit" id="submit">Cadastrar usuário</button>
+          </div>
+        </form>
+      </main>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
